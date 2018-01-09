@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+<title>Assignment 1</title>
+	  
+      <link rel="stylesheet" type="text/css" href="design.css">
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+</script>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(function () {
+$('input').blur(function () {                        
+                $(this).val(
+                    $.trim($(this).val())
+                );
+            });
+			
+			$("#form").submit(function (e) {
+            // If it is not checked, prevent the default behavior (your submit)
+            if (!$('input[name="type"]').is(':checked')) {
+                alert("No selection!")
+                e.preventDefault();
+            }
+	
+        });
+		
+		
+
+});
+ 
+</script>
+
+
+<body>
+<div class="container">
+
+<form class="form-horizontal" action="login.php"  id="form" name="form" >
+<fieldset> 
+<legend></legend>
+<br>
+<div>
+<div class="form-group">
+<label class="control-label col-sm-5" for="user">User:</label>
+<div class="col-sm-3">
+<input type="text" class="form-control" name="user" id="user" placeholder="User" autocomplete="off" required autofocus>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-sm-5" for="user">Pass:</label>
+<div class="col-sm-3">
+<input type="password" class="form-control" name="pass" id="pass" placeholder="Password" autocomplete="off" required autofocus>
+</div>
+</div>
+
+
+
+<br><br>
+
+<div class="form-group">  
+      
+      <div class="col-sm-offset-5 col-sm-10">
+	  <h4>Choice</h4>
+<label><input type="radio" name="type" id="radio1" value="A"> Administrator  </label><br>
+<label><input type="radio" name="type" id="radio2" value="C"> Customer</label><br>
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="form-group">        
+      <div class="col-sm-offset-6 col-sm-10">	
+<button type="submit" name = "submit" class="btn btn-default" >Submit</button>	
+</div>	
+	
+
+</form>
+</div>
+
+</body>
+
+</fieldset>
+</html>
